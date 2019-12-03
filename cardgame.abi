@@ -4,6 +4,42 @@
     "types": [],
     "structs": [
         {
+            "name": "game",
+            "base": "",
+            "fields": [
+                {
+                    "name": "gameid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "isenabled",
+                    "type": "bool"
+                },
+                {
+                    "name": "username",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "game_struct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "gameid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "isenabled",
+                    "type": "bool"
+                },
+                {
+                    "name": "username",
+                    "type": "name"
+                }
+            ]
+        },
+        {
             "name": "login",
             "base": "",
             "fields": [
@@ -42,12 +78,24 @@
     ],
     "actions": [
         {
+            "name": "game",
+            "type": "game",
+            "ricardian_contract": ""
+        },
+        {
             "name": "login",
             "type": "login",
             "ricardian_contract": ""
         }
     ],
     "tables": [
+        {
+            "name": "games",
+            "type": "game_struct",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
         {
             "name": "users",
             "type": "user_info",
