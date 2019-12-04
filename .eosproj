@@ -1,9 +1,9 @@
 {
-  "main": "src\\cardgame.cpp",
-  "contract": "cardgame",
+  "main": "src\\training.cpp",
+  "contract": "training",
   "include": "",
   "resource": "",
-  "cdt": false,
+  "cdt": "v1.6.3",
   "output": "",
   "scripts": {
     "build": ""

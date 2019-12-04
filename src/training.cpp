@@ -1,7 +1,6 @@
-#include <cardgame.hpp>
-#include <gameplay.cpp>
+#include <training.hpp>
 
-ACTION cardgame::login(name username, uint64_t win_count, uint64_t lost_count) {
+ACTION training::login(name username) {
   require_auth(username);
 
   // Find the record from _users table
@@ -10,15 +9,13 @@ ACTION cardgame::login(name username, uint64_t win_count, uint64_t lost_count) {
   // Create a user record if it does not exist
     user_iterator = _users.emplace(username, [&](auto&new_user) {
         new_user.username = username;
-        new_user.win_count= win_count;
-        new_user.lost_count = lost_count;
     });
     
   }
   
 }
 
-ACTION cardgame::game(uint64_t gameid, bool isenabled, name username) {
+ACTION training::game(uint64_t gameid, bool isenabled, name username) {
   require_auth(username);
 
   // Find the record from _users table

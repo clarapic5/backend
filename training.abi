@@ -46,14 +46,6 @@
                 {
                     "name": "username",
                     "type": "name"
-                },
-                {
-                    "name": "win_count",
-                    "type": "uint64"
-                },
-                {
-                    "name": "lost_count",
-                    "type": "uint64"
                 }
             ]
         },
@@ -64,14 +56,6 @@
                 {
                     "name": "username",
                     "type": "name"
-                },
-                {
-                    "name": "win_count",
-                    "type": "uint64"
-                },
-                {
-                    "name": "lost_count",
-                    "type": "uint64"
                 }
             ]
         }

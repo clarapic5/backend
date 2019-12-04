@@ -3,22 +3,21 @@
 using namespace std;
 using namespace eosio;
 
-CONTRACT cardgame : public contract {
+CONTRACT training : public contract {
   public:
     using contract::contract;
 
-    cardgame(name receiver, name code, datastream<const char*> ds):
+    training(name receiver, name code, datastream<const char*> ds):
     contract(receiver, code, ds), _users(receiver, receiver.value), _games(receiver, receiver.value) {}
 
-    ACTION login(name username, uint64_t win_count, uint64_t lost_count);
+    ACTION login(name username);
     ACTION game(uint64_t gameid, bool isenabled, name username);
    
     
   private:
     TABLE user_info {
       name        username;
-      uint64_t    win_count;
-      uint64_t    lost_count;
+      //uint64_t    num_activities = 0;
 
       auto primary_key() const { return username.value; }
     };
