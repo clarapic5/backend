@@ -8,10 +8,11 @@ CONTRACT training : public contract {
     using contract::contract;
 
     training(name receiver, name code, datastream<const char*> ds):
-    contract(receiver, code, ds), _users(receiver, receiver.value), _games(receiver, receiver.value) {}
+    contract(receiver, code, ds), _users(receiver, receiver.value), _activities(receiver, receiver.value){}
 
     ACTION login(name username);
-    ACTION game(uint64_t gameid, bool isenabled, name username);
+    ACTION insert(uint64_t activityid, name username, uint64_t training_time, double distance, double speed, uint64_t altitude, uint64_t heart_rate, uint64_t calories, uint64_t incline,         
+    uint64_t cadence, double temperature);        
    
     
   private:
@@ -26,15 +27,30 @@ CONTRACT training : public contract {
     //Table name
     users_table _users;
 
-    TABLE game_struct {
-      uint64_t gameid = 0;
-       bool isenabled;
-       name username;
 
-        auto primary_key() const { return gameid; }
+    TABLE activity_struct {
+       uint64_t activityid;
+       name     username;
+       uint64_t training_time;       //Seconds
+       double   distance;            //km
+       double   speed;               //kmxh
+       uint64_t altitude;            //m
+       uint64_t heart_rate;          //bpm
+       uint64_t calories;            //kcal
+       uint64_t incline;             //%
+       uint64_t cadence;             //rpm
+       double   temperature;         //ºC
+        
+       auto primary_key() const { return activityid; }
     };
-    typedef multi_index<name("games"), game_struct> game_table;
+    typedef multi_index<name("activities"),activity_struct> activities_table;
 
-    game_table _games;
+    //Table name
+    activities_table _activities;
+
+
+
+
+
 };
 

@@ -4,38 +4,102 @@
     "types": [],
     "structs": [
         {
-            "name": "game",
+            "name": "activity_struct",
             "base": "",
             "fields": [
                 {
-                    "name": "gameid",
+                    "name": "activityid",
                     "type": "uint64"
-                },
-                {
-                    "name": "isenabled",
-                    "type": "bool"
                 },
                 {
                     "name": "username",
                     "type": "name"
+                },
+                {
+                    "name": "training_time",
+                    "type": "uint64"
+                },
+                {
+                    "name": "distance",
+                    "type": "float64"
+                },
+                {
+                    "name": "speed",
+                    "type": "float64"
+                },
+                {
+                    "name": "altitude",
+                    "type": "uint64"
+                },
+                {
+                    "name": "heart_rate",
+                    "type": "uint64"
+                },
+                {
+                    "name": "calories",
+                    "type": "uint64"
+                },
+                {
+                    "name": "incline",
+                    "type": "uint64"
+                },
+                {
+                    "name": "cadence",
+                    "type": "uint64"
+                },
+                {
+                    "name": "temperature",
+                    "type": "float64"
                 }
             ]
         },
         {
-            "name": "game_struct",
+            "name": "insert",
             "base": "",
             "fields": [
                 {
-                    "name": "gameid",
+                    "name": "activityid",
                     "type": "uint64"
-                },
-                {
-                    "name": "isenabled",
-                    "type": "bool"
                 },
                 {
                     "name": "username",
                     "type": "name"
+                },
+                {
+                    "name": "training_time",
+                    "type": "uint64"
+                },
+                {
+                    "name": "distance",
+                    "type": "float64"
+                },
+                {
+                    "name": "speed",
+                    "type": "float64"
+                },
+                {
+                    "name": "altitude",
+                    "type": "uint64"
+                },
+                {
+                    "name": "heart_rate",
+                    "type": "uint64"
+                },
+                {
+                    "name": "calories",
+                    "type": "uint64"
+                },
+                {
+                    "name": "incline",
+                    "type": "uint64"
+                },
+                {
+                    "name": "cadence",
+                    "type": "uint64"
+                },
+                {
+                    "name": "temperature",
+                    "type": "float64"
                 }
             ]
         },
@@ -62,8 +126,8 @@
     ],
     "actions": [
         {
-            "name": "game",
-            "type": "game",
+            "name": "insert",
+            "type": "insert",
             "ricardian_contract": ""
         },
         {
@@ -74,8 +138,8 @@
     ],
     "tables": [
         {
-            "name": "games",
-            "type": "game_struct",
+            "name": "activities",
+            "type": "activity_struct",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
