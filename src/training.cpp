@@ -3,7 +3,6 @@
 ACTION training::login(name username) {
   require_auth(username);
 
-  // Find the record from _users table
   auto user_iterator = _users.find(username.value);
   if(user_iterator == _users.end()) {
   // Create a user record if it does not exist
@@ -15,27 +14,41 @@ ACTION training::login(name username) {
   
 }
 
-ACTION training::insert(uint64_t activityid, name username, uint64_t training_time, double distance, double speed, uint64_t altitude, uint64_t heart_rate, uint64_t calories, uint64_t incline,         
-      uint64_t cadence,  double temperature) {
+ACTION training::insert(name activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
+    uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
+    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature) {
 
   require_auth(username);
 
-  // Find the record from _users table
-  auto activity_iterator = _activities.find(activityid);
+  
+  auto activity_iterator = _activities.find(activityid.value);
   if(activity_iterator == _activities.end()) {
-  // Create a user record if it does not exist
+  // Create an activityrecord if it does not exist
     activity_iterator = _activities.emplace(username, [&](auto&new_activity) {
-        new_activity.activityid = activityid;
-        new_activity.username = username;
-        new_activity.training_time = training_time;
-        new_activity.distance = distance;
-        new_activity.speed = speed;
-        new_activity.altitude = altitude;
-        new_activity.heart_rate = heart_rate;
-        new_activity.calories = calories;
-        new_activity.incline = incline;
-        new_activity.cadence = cadence;
-        new_activity.temperature = temperature;
+         new_activity.activityid = activityid;
+         new_activity.username = username;
+         new_activity.duration = duration;
+         new_activity.distance = distance;
+         new_activity.speed1 = speed1;
+         new_activity.speed2 = speed2;
+         new_activity.speed3 = speed3;
+         new_activity.speed4 = speed4;
+         new_activity.speed5 = speed5;
+         new_activity.speed6 = speed6;
+         new_activity.speed7 = speed7;
+         new_activity.avg_speed = avg_speed;
+         new_activity.altitude = altitude;
+         new_activity.hrate1 = hrate1;
+         new_activity.hrate2 = hrate2;
+         new_activity.hrate3 = hrate3;
+         new_activity.hrate4 = hrate4;
+         new_activity.hrate5 = hrate5;
+         new_activity.hrate6 = hrate6;
+         new_activity.hrate7 = hrate7;
+         new_activity.avg_hrate = avg_hrate;
+         new_activity.calories = calories;
+         new_activity.weather = weather;
+         new_activity.temperature = temperature;
     });
   }
 }

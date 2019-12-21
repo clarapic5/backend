@@ -7,50 +7,57 @@ CONTRACT training : public contract {
   public:
     using contract::contract;
 
+    //Contract name
     training(name receiver, name code, datastream<const char*> ds):
     contract(receiver, code, ds), _users(receiver, receiver.value), _activities(receiver, receiver.value){}
 
+    //Actions login, insert
     ACTION login(name username);
-    ACTION insert(uint64_t activityid, name username, uint64_t training_time, double distance, double speed, uint64_t altitude, uint64_t heart_rate, uint64_t calories, uint64_t incline,         
-    uint64_t cadence, double temperature);        
+    ACTION insert(name activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
+    uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
+    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature);        
    
     
   private:
+    //Tables users, activities
     TABLE user_info {
       name        username;
-      //uint64_t    num_activities = 0;
-
       auto primary_key() const { return username.value; }
     };
     typedef multi_index<name("users"), user_info> users_table;
-    
-    //Table name
     users_table _users;
 
-
     TABLE activity_struct {
-       uint64_t activityid;
-       name     username;
-       uint64_t training_time;       //Seconds
-       double   distance;            //km
-       double   speed;               //kmxh
-       uint64_t altitude;            //m
-       uint64_t heart_rate;          //bpm
-       uint64_t calories;            //kcal
-       uint64_t incline;             //%
-       uint64_t cadence;             //rpm
-       double   temperature;         //ºC
+       name        activityid;
+       name        username;
+       string      duration;            //min
+       double      distance;            //km
+       uint64_t    speed1;              //1-10
+       uint64_t    speed2;              //1-10
+       uint64_t    speed3;              //1-10
+       uint64_t    speed4;              //1-10
+       uint64_t    speed5;              //1-10
+       uint64_t    speed6;              //1-10
+       uint64_t    speed7;              //1-10
+       uint64_t    avg_speed;           //1-10
+       uint64_t    altitude;            //m
+       uint64_t    hrate1;              //bpm
+       uint64_t    hrate2;              //bpm
+       uint64_t    hrate3;              //bpm
+       uint64_t    hrate4;              //bpm
+       uint64_t    hrate5;              //bpm
+       uint64_t    hrate6;              //bpm
+       uint64_t    hrate7;              //bpm
+       uint64_t    avg_hrate;           //bpm
+       uint64_t    calories;            //kcal
+       string      weather;             //Cloudy, Sunny, Rainy
+       double      temperature;         //ºC
         
-       auto primary_key() const { return activityid; }
+       auto primary_key() const { return activityid.value; }
+      
     };
     typedef multi_index<name("activities"),activity_struct> activities_table;
-
-    //Table name
     activities_table _activities;
-
-
-
-
 
 };
 

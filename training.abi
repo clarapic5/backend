@@ -9,30 +9,86 @@
             "fields": [
                 {
                     "name": "activityid",
-                    "type": "uint64"
+                    "type": "name"
                 },
                 {
                     "name": "username",
                     "type": "name"
                 },
                 {
-                    "name": "training_time",
-                    "type": "uint64"
+                    "name": "duration",
+                    "type": "string"
                 },
                 {
                     "name": "distance",
                     "type": "float64"
                 },
                 {
-                    "name": "speed",
-                    "type": "float64"
+                    "name": "speed1",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed2",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed3",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed4",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed5",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed6",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed7",
+                    "type": "uint64"
+                },
+                {
+                    "name": "avg_speed",
+                    "type": "uint64"
                 },
                 {
                     "name": "altitude",
                     "type": "uint64"
                 },
                 {
-                    "name": "heart_rate",
+                    "name": "hrate1",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate2",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate3",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate4",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate5",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate6",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate7",
+                    "type": "uint64"
+                },
+                {
+                    "name": "avg_hrate",
                     "type": "uint64"
                 },
                 {
@@ -40,12 +96,8 @@
                     "type": "uint64"
                 },
                 {
-                    "name": "incline",
-                    "type": "uint64"
-                },
-                {
-                    "name": "cadence",
-                    "type": "uint64"
+                    "name": "weather",
+                    "type": "string"
                 },
                 {
                     "name": "temperature",
@@ -59,30 +111,86 @@
             "fields": [
                 {
                     "name": "activityid",
-                    "type": "uint64"
+                    "type": "name"
                 },
                 {
                     "name": "username",
                     "type": "name"
                 },
                 {
-                    "name": "training_time",
-                    "type": "uint64"
+                    "name": "duration",
+                    "type": "string"
                 },
                 {
                     "name": "distance",
                     "type": "float64"
                 },
                 {
-                    "name": "speed",
-                    "type": "float64"
+                    "name": "speed1",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed2",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed3",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed4",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed5",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed6",
+                    "type": "uint64"
+                },
+                {
+                    "name": "speed7",
+                    "type": "uint64"
+                },
+                {
+                    "name": "avg_speed",
+                    "type": "uint64"
                 },
                 {
                     "name": "altitude",
                     "type": "uint64"
                 },
                 {
-                    "name": "heart_rate",
+                    "name": "hrate1",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate2",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate3",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate4",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate5",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate6",
+                    "type": "uint64"
+                },
+                {
+                    "name": "hrate7",
+                    "type": "uint64"
+                },
+                {
+                    "name": "avg_hrate",
                     "type": "uint64"
                 },
                 {
@@ -90,12 +198,8 @@
                     "type": "uint64"
                 },
                 {
-                    "name": "incline",
-                    "type": "uint64"
-                },
-                {
-                    "name": "cadence",
-                    "type": "uint64"
+                    "name": "weather",
+                    "type": "string"
                 },
                 {
                     "name": "temperature",
