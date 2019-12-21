@@ -14,14 +14,23 @@ ACTION training::login(name username) {
   
 }
 
-ACTION training::insert(name activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
+
+ACTION training::remove(uint64_t activityid, name username) {
+    require_auth(username);
+    auto act_iterator = _activities.find(activityid);
+    act_iterator = _activities.erase(act_iterator);
+    
+}
+ 
+
+ACTION training::insert(uint64_t activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
     uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
     uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature) {
 
   require_auth(username);
 
   
-  auto activity_iterator = _activities.find(activityid.value);
+  auto activity_iterator = _activities.find(activityid);
   if(activity_iterator == _activities.end()) {
   // Create an activityrecord if it does not exist
     activity_iterator = _activities.emplace(username, [&](auto&new_activity) {

@@ -11,12 +11,12 @@ CONTRACT training : public contract {
     training(name receiver, name code, datastream<const char*> ds):
     contract(receiver, code, ds), _users(receiver, receiver.value), _activities(receiver, receiver.value){}
 
-    //Actions login, insert
+    //Actions login, insert, delete
     ACTION login(name username);
-    ACTION insert(name activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
+    ACTION insert(uint64_t activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
     uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
     uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature);        
-   
+    ACTION remove(uint64_t activityid, name username);
     
   private:
     //Tables users, activities
@@ -28,7 +28,7 @@ CONTRACT training : public contract {
     users_table _users;
 
     TABLE activity_struct {
-       name        activityid;
+       uint64_t    activityid;
        name        username;
        string      duration;            //min
        double      distance;            //km
@@ -53,7 +53,7 @@ CONTRACT training : public contract {
        string      weather;             //Cloudy, Sunny, Rainy
        double      temperature;         //ºC
         
-       auto primary_key() const { return activityid.value; }
+       auto primary_key() const { return activityid;}
       
     };
     typedef multi_index<name("activities"),activity_struct> activities_table;

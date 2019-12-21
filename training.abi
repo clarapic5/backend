@@ -9,7 +9,7 @@
             "fields": [
                 {
                     "name": "activityid",
-                    "type": "name"
+                    "type": "uint64"
                 },
                 {
                     "name": "username",
@@ -111,7 +111,7 @@
             "fields": [
                 {
                     "name": "activityid",
-                    "type": "name"
+                    "type": "uint64"
                 },
                 {
                     "name": "username",
@@ -218,6 +218,20 @@
             ]
         },
         {
+            "name": "remove",
+            "base": "",
+            "fields": [
+                {
+                    "name": "activityid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "username",
+                    "type": "name"
+                }
+            ]
+        },
+        {
             "name": "user_info",
             "base": "",
             "fields": [
@@ -237,6 +251,11 @@
         {
             "name": "login",
             "type": "login",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "remove",
+            "type": "remove",
             "ricardian_contract": ""
         }
     ],
