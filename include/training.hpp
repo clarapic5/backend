@@ -52,7 +52,7 @@ CONTRACT training : public contract {
        uint64_t    calories;            //kcal
        string      weather;             //Cloudy, Sunny, Rainy
        double      temperature;         //ºC
-       bool        shared = false;      //false by default
+       bool        shared;             
         
        auto primary_key() const { return activityid;}
       

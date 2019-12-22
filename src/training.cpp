@@ -58,7 +58,7 @@ ACTION training::insert(uint64_t activityid, name username, string duration, dou
          new_activity.calories = calories;
          new_activity.weather = weather;
          new_activity.temperature = temperature;
-         new_activity.shared = shared;
+         new_activity.shared = shared;    //false by default
     });
   }
 }
