@@ -15,7 +15,7 @@ CONTRACT training : public contract {
     ACTION login(name username);
     ACTION insert(uint64_t activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
     uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
-    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature);        
+    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature, bool shared);        
     ACTION remove(uint64_t activityid, name username);
     
   private:
@@ -52,6 +52,7 @@ CONTRACT training : public contract {
        uint64_t    calories;            //kcal
        string      weather;             //Cloudy, Sunny, Rainy
        double      temperature;         //ºC
+       bool        shared = false;      //false by default
         
        auto primary_key() const { return activityid;}
       

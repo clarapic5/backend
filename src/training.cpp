@@ -25,7 +25,7 @@ ACTION training::remove(uint64_t activityid, name username) {
 
 ACTION training::insert(uint64_t activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
     uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
-    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature) {
+    uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature, bool shared) {
 
   require_auth(username);
 
@@ -58,6 +58,7 @@ ACTION training::insert(uint64_t activityid, name username, string duration, dou
          new_activity.calories = calories;
          new_activity.weather = weather;
          new_activity.temperature = temperature;
+         new_activity.shared = shared;
     });
   }
 }

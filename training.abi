@@ -102,6 +102,10 @@
                 {
                     "name": "temperature",
                     "type": "float64"
+                },
+                {
+                    "name": "shared",
+                    "type": "bool"
                 }
             ]
         },
@@ -204,6 +208,10 @@
                 {
                     "name": "temperature",
                     "type": "float64"
+                },
+                {
+                    "name": "shared",
+                    "type": "bool"
                 }
             ]
         },
