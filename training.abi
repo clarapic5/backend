@@ -240,6 +240,20 @@
             ]
         },
         {
+            "name": "share",
+            "base": "",
+            "fields": [
+                {
+                    "name": "activityid",
+                    "type": "uint64"
+                },
+                {
+                    "name": "username",
+                    "type": "name"
+                }
+            ]
+        },
+        {
             "name": "user_info",
             "base": "",
             "fields": [
@@ -264,6 +278,11 @@
         {
             "name": "remove",
             "type": "remove",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "share",
+            "type": "share",
             "ricardian_contract": ""
         }
     ],

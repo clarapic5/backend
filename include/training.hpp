@@ -17,6 +17,7 @@ CONTRACT training : public contract {
     uint64_t speed6, uint64_t speed7, uint64_t avg_speed, uint64_t altitude, uint64_t hrate1, uint64_t hrate2, uint64_t hrate3, uint64_t hrate4, uint64_t hrate5, uint64_t hrate6,
     uint64_t hrate7, uint64_t avg_hrate, uint64_t calories, string weather, double temperature, bool shared);        
     ACTION remove(uint64_t activityid, name username);
+    ACTION share(uint64_t activityid, name username);
     
   private:
     //Tables users, activities

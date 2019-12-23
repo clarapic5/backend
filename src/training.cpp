@@ -21,6 +21,18 @@ ACTION training::remove(uint64_t activityid, name username) {
     act_iterator = _activities.erase(act_iterator);
     
 }
+
+ACTION training::share(uint64_t activityid, name username) {
+    require_auth(username);
+     // get object by secordary key
+      auto act_entry = _activities.find(activityid);
+    //auto &act_entry = act_iterator.get(activityid);
+  // update existing note
+  _activities.modify(act_entry,_self, [&](auto&modified_activity) {
+        modified_activity.shared = true;
+  });
+    
+}
  
 
 ACTION training::insert(uint64_t activityid, name username, string duration, double distance, uint64_t speed1, uint64_t speed2, uint64_t speed3, uint64_t speed4, uint64_t speed5,
